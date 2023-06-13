@@ -19,7 +19,7 @@ const TareasForm = () => {
 
   return (
     <div className="max-w-xl mx-auto">
-      <form className="bg-blue-300 grid grid-cols-1 gap-2 p-5 m-3 rounded-md border-2 border-slate-100">
+      <form onSubmit={handleSubmit} className="bg-blue-300 grid grid-cols-1 gap-2 p-5 m-3 rounded-md border-2 border-slate-100">
         <label className="font-bold text-2xl">
           Ingrese una nueva tarea:{" "}
         </label>
@@ -42,8 +42,7 @@ const TareasForm = () => {
           rows={5}
         />
         <button
-          className="bg-blue-700 rounded-md hover:bg-blue-500 text-white font-bold px-5 py-2 mx-auto"
-          onClick={handleSubmit}
+          className="bg-green-700 rounded-md hover:bg-green-300 hover:text-black text-white font-bold px-5 py-2 mx-auto"
         >
           Guardar
         </button>
