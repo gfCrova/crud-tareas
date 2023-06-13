@@ -1,34 +1,15 @@
-import TareasList from './Components/TareasList'
-import TareasForm from './Components/TareasForm'
-import {tasks as data} from './data/tasks'
-import {useState, useEffect} from 'react'
+import TareasList from "./components/TareasList";
+import TareasForm from "./components/TareasForm";
 
 const App = () => {
-
-  const [tareas, setTareas] = useState([])
-
-    useEffect(() => {
-        setTareas(data)
-    }, [])
-
-  const createTarea = (tarea) => {
-    setTareas([...tareas, {
-      id : tarea.length,
-      title : tarea.title,
-      description : tarea.description
-    }])
-  }
-
-  const borrarTarea = (tareaId) => {
-    setTareas(tareas.filter(tarea => tarea.id !== tareaId))
-  }
-
   return (
-    <div>
-        <TareasForm createTarea={createTarea}/>
-        <TareasList tareas={tareas} borrarTarea={borrarTarea}/>
-    </div>
-  )
-}
+    <main className="h-screen p-3 bg-slate-950">
+      <div className="container mx-auto p-2">
+        <TareasForm />
+        <TareasList />
+      </div>
+    </main>
+  );
+};
 
-export default App
+export default App;
