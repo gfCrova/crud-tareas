@@ -3,7 +3,7 @@ import TareasForm from "./components/TareasForm";
 
 const App = () => {
   return (
-    <main className="h-screen p-3 bg-slate-950">
+    <main className="p-3">
       <div className="container mx-auto p-2">
         <TareasForm />
         <TareasList />
