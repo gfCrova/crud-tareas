@@ -13,8 +13,8 @@ const TareasList = () => {
 
     return (
         <div className='grid grid-cols-3 gap-2 p-3'>
-            {tasks.map((tarea) => (
-                <TareasCard key={tarea.id} tarea={tarea}/>
+            {tasks.map((task) => (
+                <TareasCard key={task.id} tarea={task}/>
             ))}
         </div>
     );
