@@ -7,6 +7,16 @@ export const TareasContextProvider = (props) => {
   const [tasks, setTasks] = useState([]);
 
   const createTarea = (tarea) => {
+    const getUltimoId = tasks.reduce((maxId, tarea) => Math.max(maxId, tarea.id), 0);
+    const newTarea = {
+      id: getUltimoId + 1,
+      title: tarea.title,
+      description: tarea.description,
+    };
+    setTasks([...tasks, newTarea]);
+  };
+
+  /*const createTarea = (tarea) => {
     setTasks([
       ...tasks,
       {
@@ -15,7 +25,7 @@ export const TareasContextProvider = (props) => {
         description: tarea.description,
       },
     ]);
-  };
+  };*/
 
   const borrarTarea = (tareaId) => {
     setTasks(tasks.filter((tarea) => tarea.id !== tareaId));
@@ -31,8 +41,7 @@ export const TareasContextProvider = (props) => {
         tasks,
         createTarea,
         borrarTarea,
-      }}
-    >
+      }} >
       {props.children}
     </TareasContext.Provider>
   );
