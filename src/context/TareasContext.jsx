@@ -16,17 +16,6 @@ export const TareasContextProvider = (props) => {
     setTasks([...tasks, newTarea]);
   };
 
-  /*const createTarea = (tarea) => {
-    setTasks([
-      ...tasks,
-      {
-        id: tarea.length,
-        title: tarea.title,
-        description: tarea.description,
-      },
-    ]);
-  };*/
-
   const borrarTarea = (tareaId) => {
     setTasks(tasks.filter((tarea) => tarea.id !== tareaId));
   };
