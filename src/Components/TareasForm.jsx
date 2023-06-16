@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { TareasContext } from "../context/TareasContext";
+import { mostrarMensaje } from '../events/mensajeAlert'
 
 const TareasForm = () => {
   const [title, setTitle] = useState("");
@@ -15,11 +16,12 @@ const TareasForm = () => {
     });
     setTitle("");
     setDescription("");
+    mostrarMensaje('.containerDiv', '.form', 'bg-green-200')
   };
 
   return (
-    <div className="max-w-xl mx-auto">
-      <form onSubmit={handleSubmit} className="bg-blue-300 grid grid-cols-1 gap-2 p-5 m-3 rounded-md border-2 border-slate-100">
+    <div className="containerDiv max-w-xl mx-auto">
+      <form onSubmit={handleSubmit} className="form bg-blue-300 grid grid-cols-1 gap-2 p-5 m-3 rounded-md border-2 border-slate-100">
         <label className="font-bold text-2xl">
           Ingrese una nueva tarea:{" "}
         </label>
