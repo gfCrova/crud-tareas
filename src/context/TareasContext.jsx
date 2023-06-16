@@ -20,6 +20,18 @@ export const TareasContextProvider = (props) => {
     setTasks(tasks.filter((tarea) => tarea.id !== tareaId));
   };
 
+  const actualizarTarea = (tareaId, nuevosAtributos) => {
+    setTasks(tasks.map((tarea) => {
+      if (tarea.id === tareaId) {
+        return {
+          ...tarea,
+          ...nuevosAtributos
+        };
+      }
+      return tarea;
+    }));
+  };
+
   useEffect(() => {
     setTasks(data);
   }, []);
@@ -29,6 +41,7 @@ export const TareasContextProvider = (props) => {
       value={{
         tasks,
         createTarea,
+        actualizarTarea,
         borrarTarea,
       }} >
       {props.children}
