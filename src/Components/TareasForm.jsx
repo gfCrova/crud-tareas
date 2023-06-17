@@ -1,6 +1,5 @@
 import { useState, useContext } from "react";
 import { TareasContext } from "../context/TareasContext";
-import { mostrarMensaje } from '../events/mensajeAlert'
 
 const TareasForm = () => {
   const [title, setTitle] = useState("");
@@ -16,7 +15,6 @@ const TareasForm = () => {
     });
     setTitle("");
     setDescription("");
-    mostrarMensaje('.containerDiv', '.form', 'bg-green-200')
   };
 
   return (
@@ -33,6 +31,7 @@ const TareasForm = () => {
           }}
           value={title}
           autoFocus
+          required
         />
         <textarea
           className="rounded-md p-2"
@@ -42,6 +41,7 @@ const TareasForm = () => {
           }}
           value={description}
           rows={5}
+          required
         />
         <button
           className="bg-green-700 rounded-md hover:bg-green-300 hover:text-black text-white font-bold px-5 py-2 mx-auto"
