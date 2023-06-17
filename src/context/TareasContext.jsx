@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { tasks as data } from "../data/tasks";
+import { mostrarMensaje } from "../events/mensajeAlert";
 
 export const TareasContext = createContext();
 
@@ -13,7 +14,14 @@ export const TareasContextProvider = (props) => {
       title: tarea.title,
       description: tarea.description,
     };
-    setTasks([...tasks, newTarea]);
+    if(newTarea.title !== "" && newTarea.description !== "") {
+      setTasks([...tasks, newTarea]);
+      mostrarMensaje(
+        `✅ Se agrego la tarea`,
+        '.containerDiv', 
+        '.form', 
+        'bg-green-200')
+    }
   };
 
   const borrarTarea = (tareaId) => {
