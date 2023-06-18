@@ -17,7 +17,7 @@ export const TareasContextProvider = (props) => {
     if(newTarea.title !== "" && newTarea.description !== "") {
       setTasks([...tasks, newTarea]);
       mostrarMensaje(
-        `✅ Se agrego la tarea`,
+        `✅ Se agrego la tarea correctamente`,
         '.containerDiv', 
         '.form', 
         'bg-green-200')
