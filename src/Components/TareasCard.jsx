@@ -27,7 +27,7 @@ const TareasCard = ({ tarea }) => {
 
 
   return (
-    <div className="rounded-md border-2 border-slate-100">
+    <div className="grid grid-cols-1 rounded-md border-2 border-slate-100">
       {editing ? (
         <TareasUpdate
           newTitle={newTitle}
@@ -43,7 +43,7 @@ const TareasCard = ({ tarea }) => {
       <div className="bg-blue-200 p-4">
         <p className="overflow-auto font-thin">{tarea.description}</p>
       </div>
-      <div className="bg-slate-400 mx-auto p-4">
+      <div className="bg-slate-400 p-4">
         <button className="bg-orange-600 text-white px-3 py-1 rounded-md hover:bg-orange-300 hover:text-black mx-2"
           onClick={handleModificar}
         >
