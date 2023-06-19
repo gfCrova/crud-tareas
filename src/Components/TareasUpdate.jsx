@@ -8,7 +8,7 @@ const TareasUpdate = ({
   handleCancelar,
 }) => {
   return (
-    <div className="max-w-xl mx-auto">
+    <div className="max-w-xl">
       <form className="bg-slate-300 grid grid-cols-1 gap-3 p-5 rounded-md border-2 border-slate-100">
         <label>Modificar Título: </label>
         <input
